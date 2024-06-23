@@ -16,6 +16,7 @@
 1. Unzip the ZIP file:
    - After unzipping, you'll find a folder named "Super Final".
    - Navigate into the "Super Final" folder.
+   - Navigate into the "gecr store" folder.
 
 ### Setting Up Environment:
 1. Create Virtual Environment:

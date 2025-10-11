@@ -14,7 +14,7 @@ export function DashboardPage() {
   page.innerHTML = `
     <div class="dashboard">
       <div class="dashboard-header">
-        <h2>Equipment Inventory</h2>
+        <h2>GECR STORE</h2>
         <div class="dashboard-actions">
           <button class="btn btn-secondary" id="export-btn">
             <span class="icon">📊</span> Export CSV

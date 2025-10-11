@@ -16,18 +16,22 @@ function notify() {
 }
 
 export async function initAuth() {
-  const { data: { session } } = await supabase.auth.getSession();
-  authState.session = session;
-  authState.user = session?.user || null;
-  notify();
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    authState.session = session;
+    authState.user = session?.user || null;
+    notify();
 
-  supabase.auth.onAuthStateChange((_event, session) => {
-    (async () => {
+    supabase.auth.onAuthStateChange((_event, session) => {
       authState.session = session;
       authState.user = session?.user || null;
       notify();
-    })();
-  });
+    });
+  } catch (error) {
+    console.log('Auth initialization failed, running in demo mode');
+    authState.user = null;
+    notify();
+  }
 }
 
 export async function signUp(email, password, username) {
@@ -52,6 +56,12 @@ export async function signIn(email, password) {
   });
 
   if (error) throw error;
+  
+  // Update auth state immediately for demo mode
+  authState.user = data.user;
+  authState.session = data.session;
+  notify();
+  
   return data;
 }
 

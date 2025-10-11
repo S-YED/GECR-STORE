@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "demo": "echo 'Starting GECR STORE in demo mode...' && vite"
   },
   "keywords": [],
   "author": "",

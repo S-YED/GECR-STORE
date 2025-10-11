@@ -10,8 +10,8 @@ export function LoginPage() {
     <div class="auth-container">
       <div class="auth-card">
         <div class="auth-header">
-          <h1>GECR Store</h1>
-          <p>Inventory Management System</p>
+          <h1>GECR STORE</h1>
+          
         </div>
 
         <div class="auth-tabs">

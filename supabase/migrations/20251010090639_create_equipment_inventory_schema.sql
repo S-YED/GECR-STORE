@@ -81,7 +81,12 @@
   - `idx_audit_logs_performed_at` - Time-based audit log queries
 
   ## Sample Data
-  Includes initial departments and sample equipment records from the original system.
+  Includes initial departments and comprehensive sample equipment records:
+  - 21 equipment items across all departments
+  - Realistic pricing from ₹3,500 to ₹8,50,000
+  - Various suppliers and locations
+  - Different lab assignments and quantities
+  - Mix of electronics, mechanical, civil, and computer science equipment
 */
 
 -- Enable UUID extension
@@ -295,3 +300,43 @@ INSERT INTO departments (name) VALUES
   ('Computer Science'),
   ('Mechanical')
 ON CONFLICT (name) DO NOTHING;
+
+-- Insert sample equipment data (comprehensive dataset)
+DO $$
+DECLARE
+  dept_ece uuid;
+  dept_civil uuid;
+  dept_cs uuid;
+  dept_mech uuid;
+BEGIN
+  -- Get department IDs
+  SELECT id INTO dept_ece FROM departments WHERE name = 'Electronic and Communication';
+  SELECT id INTO dept_civil FROM departments WHERE name = 'Civil';
+  SELECT id INTO dept_cs FROM departments WHERE name = 'Computer Science';
+  SELECT id INTO dept_mech FROM departments WHERE name = 'Mechanical';
+
+  -- Insert equipment records
+  INSERT INTO equipments (order_no, name, purchase_date, supplier, amount, condition, department_id, room_name, quantity) VALUES
+    ('10', 'Signal Generator', '2016-12-03', 'UNION INSTRUMENTS, BANGALORE', 87343, 'Serviceable', dept_ece, 'Microprocessor Lab', 7),
+    ('VT/121', 'EXIDE 100AH Battery (Tubular Type) 12V', '2018-03-17', 'Vasundhara Technologies, Bangalore', 89920, 'Serviceable', dept_ece, 'Power Electronics Lab', 5),
+    ('13', 'STEPPER MOTOR Interface', '2016-12-03', 'UNION INSTRUMENTS, BANGALORE', 56419, 'Serviceable', dept_ece, 'Microprocessor Lab', 5),
+    ('14', 'DC MOTOR Interface', '2016-12-03', 'UNION INSTRUMENTS, BANGALORE', 33205, 'Serviceable', dept_ece, 'Microprocessor Lab', 5),
+    ('11', 'PCI DIOT', '2016-12-03', 'UNION INSTRUMENTS, BANGALORE', 89411, 'Serviceable', dept_ece, 'Microprocessor Lab', 5),
+    ('9', 'KeyBoard Interface', '2016-12-03', 'UNION INSTRUMENTS, BANGALORE', 23615, 'Serviceable', dept_ece, 'Microprocessor Lab', 5),
+    ('32', 'WiFi Router', '2027-12-27', 'Clive Technologies, Ramanagara', 8104, 'Serviceable', dept_cs, 'Network Lab', 3),
+    ('OSC/001', 'Digital Storage Oscilloscope', '2019-05-15', 'Tektronix India Pvt Ltd', 125000, 'Serviceable', dept_ece, 'Electronics Lab', 2),
+    ('CNC/M01', 'CNC Milling Machine', '2020-08-22', 'Ace Micromatic Group', 850000, 'Serviceable', dept_mech, 'Manufacturing Lab', 1),
+    ('LAB/PC15', 'High Performance Workstation', '2021-01-10', 'Dell Technologies', 95000, 'Serviceable', dept_cs, 'Programming Lab', 25),
+    ('NET/AN02', 'Network Analyzer', '2019-11-08', 'Keysight Technologies', 180000, 'Serviceable', dept_ece, 'RF Lab', 1),
+    ('CONC/T01', 'Concrete Testing Machine', '2018-06-12', 'Controls Group India', 220000, 'Serviceable', dept_civil, 'Materials Lab', 1),
+    ('LAT/001', 'Precision Lathe Machine', '2020-03-18', 'Bharat Heavy Electricals Ltd', 450000, 'Serviceable', dept_mech, 'Workshop', 2),
+    ('ARD/KIT5', 'Arduino Development Kit', '2021-09-05', 'Arduino Store India', 3500, 'Serviceable', dept_cs, 'IoT Lab', 15),
+    ('SPEC/AN1', 'Spectrum Analyzer', '2019-07-20', 'Rohde & Schwarz', 320000, 'Serviceable', dept_ece, 'Communication Lab', 1),
+    ('SOIL/T02', 'Soil Testing Equipment Set', '2018-12-03', 'Aimil Ltd', 75000, 'Serviceable', dept_civil, 'Geotechnical Lab', 1),
+    ('3D/PR01', '3D Printer (Industrial Grade)', '2021-04-14', 'Stratasys India', 280000, 'Serviceable', dept_mech, 'Design Lab', 2),
+    ('SRV/R01', 'High-End Server Rack', '2020-11-25', 'HPE India', 450000, 'Serviceable', dept_cs, 'Data Center', 3),
+    ('PWR/SUP3', 'Programmable Power Supply', '2019-02-28', 'Keithley Instruments', 65000, 'Serviceable', dept_ece, 'Power Lab', 4),
+    ('SURV/EQ1', 'Total Station Survey Equipment', '2018-09-15', 'Leica Geosystems', 380000, 'Serviceable', dept_civil, 'Survey Lab', 2),
+    ('CMP/ENG1', 'Compressor Engine Test Rig', '2020-07-08', 'Techno Instruments', 195000, 'Serviceable', dept_mech, 'Thermal Lab', 1)
+  ON CONFLICT DO NOTHING;
+END $$;

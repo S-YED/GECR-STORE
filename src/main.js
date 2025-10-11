@@ -26,13 +26,24 @@ subscribe((state) => {
 });
 
 (async () => {
-  await initAuth();
+  try {
+    console.log('Initializing GECR STORE...');
+    await initAuth();
+    console.log('Auth initialized, user:', isAuthenticated());
 
-  if (!isAuthenticated() && window.location.pathname !== '/login') {
+    if (!isAuthenticated() && window.location.pathname !== '/login') {
+      console.log('Redirecting to login');
+      navigate('/login');
+    } else if (isAuthenticated() && window.location.pathname === '/login') {
+      console.log('Redirecting to dashboard');
+      navigate('/');
+    } else {
+      console.log('Routing to current path');
+      route();
+    }
+  } catch (error) {
+    console.error('Error initializing app:', error);
+    // Fallback to login page
     navigate('/login');
-  } else if (isAuthenticated() && window.location.pathname === '/login') {
-    navigate('/');
-  } else {
-    route();
   }
 })();

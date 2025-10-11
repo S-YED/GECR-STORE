@@ -2,11 +2,10 @@
 
 ![GECR STORE](https://github.com/S-YED/GECR-STORE/blob/main/SNAPSHOTS/gecr1.png)
 
-A luxury-grade equipment inventory management system with premium UI, glassmorphism effects, and comprehensive functionality for managing laboratory equipment across departments.
+An equipment inventory management system with comprehensive functionality for managing laboratory equipment across departments.
 
 ## ✨ Features
 
-- **Premium Dark UI** with glassmorphism and luxury animations
 - **Equipment Management** - Add, edit, delete, and search equipment records
 - **Department Management** - Organize equipment by departments
 - **User Authentication** - Secure login/signup system
@@ -147,13 +146,10 @@ GECR-STORE/
 
 ## 🎨 UI Features
 
-- **Luxury Dark Theme** with gradient backgrounds
 - **Glassmorphism Effects** with backdrop blur
 - **Animated Components** with smooth transitions
-- **Premium Typography** with Inter font family
 - **Responsive Design** for all screen sizes
 - **Custom Scrollbars** with gradient styling
-- **Floating Animations** and hover effects
 
 ## 🔒 Security Features
 

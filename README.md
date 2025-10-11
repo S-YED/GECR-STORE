@@ -1,4 +1,4 @@
-# GECR STORE - Premium Equipment Management System
+# GECR STORE - Equipment Management System
 
 ![GECR STORE](https://github.com/S-YED/GECR-STORE/blob/main/SNAPSHOTS/gecr1.png)
 

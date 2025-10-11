@@ -11,7 +11,7 @@ export function Navbar() {
   component.innerHTML = `
     <div class="navbar-container">
       <div class="navbar-brand">
-        <h1>GECR Equipment Store</h1>
+        <h1>GECR Store</h1>
       </div>
       ${user ? `
         <div class="navbar-menu">

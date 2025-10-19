@@ -4,6 +4,16 @@
 
 An equipment inventory management system with comprehensive functionality for managing laboratory equipment across departments.
 
+## 🌐 Live Demo
+
+**Try it now:** [https://s-yed.github.io/GECR-STORE/](https://s-yed.github.io/GECR-STORE/)
+
+**Login with any credentials:**
+- Email: `demo@example.com` (or any email)
+- Password: `password123` (or any password)
+
+The demo includes 21+ sample equipment items across 4 departments with full functionality.
+
 ## ✨ Features
 
 - **Equipment Management** - Add, edit, delete, and search equipment records
@@ -17,16 +27,18 @@ An equipment inventory management system with comprehensive functionality for ma
 
 ## 🚀 Quick Start (Demo Mode)
 
-**Run immediately without any setup:**
+**Option 1: Try Online Demo**
+- Visit: [https://s-yed.github.io/GECR-STORE/](https://s-yed.github.io/GECR-STORE/)
+- Login with **any email/password** (e.g., `demo@example.com` / `password123`)
 
+**Option 2: Run Locally**
 ```bash
 git clone https://github.com/S-YED/GECR-STORE.git
 cd GECR-STORE
 npm install
 npm run dev
 ```
-
-Open `http://localhost:3000` and login with any email/password to see the demo with sample data.
+Open `http://localhost:3000` and login with any email/password.
 
 ## 🛠️ Tech Stack
 
@@ -95,9 +107,10 @@ npm run dev
 ## 🎯 Usage
 
 ### Demo Mode
-- **Login**: Use any email/password combination
+- **Login**: Use any email/password (e.g., `demo@example.com` / `password123`)
 - **Sample Data**: 21+ equipment items across 4 departments
 - **Full Functionality**: All features work with mock data
+- **Live Demo**: [https://s-yed.github.io/GECR-STORE/](https://s-yed.github.io/GECR-STORE/)
 
 ### Production Mode
 - **Register**: Create a new account

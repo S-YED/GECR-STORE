@@ -1,7 +1,7 @@
 {
-  "name": "project",
+  "name": "gecr-store",
   "version": "1.0.0",
-  "description": "@S-YED",
+  "description": "Equipment Management System for Laboratory Inventory",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -11,8 +11,8 @@
     "demo": "echo 'Starting GECR STORE in demo mode...' && vite",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["equipment", "inventory", "management", "laboratory", "vite", "javascript"],
+  "author": "S-YED",
   "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",

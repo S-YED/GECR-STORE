@@ -8,7 +8,8 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "demo": "echo 'Starting GECR STORE in demo mode...' && vite"
+    "demo": "echo 'Starting GECR STORE in demo mode...' && vite",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",
     "vite": "^7.1.9"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

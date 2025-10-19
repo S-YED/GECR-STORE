@@ -1,7 +1,7 @@
 # GECR STORE - Equipment Management System
 
 ![GECR STORE](https://github.com/S-YED/GECR-STORE/blob/main/SNAPSHOTS/gecr1.png)
-
++
 An equipment inventory management system with comprehensive functionality for managing laboratory equipment across departments.
 
 ## 🌐 Live Demo

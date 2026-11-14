@@ -1,7 +1,7 @@
 # GECR STORE - Equipment Management System
 
 ![GECR STORE](https://github.com/S-YED/GECR-STORE/blob/main/SNAPSHOTS/gecr1.png)
-+
+
 An equipment inventory management system with comprehensive functionality for managing laboratory equipment across departments.
 
 ## 🌐 Live Demo
@@ -88,8 +88,9 @@ npm run dev
    - Copy your Project URL and anon/public key
 
 3. **Configure Environment**:
-   - Edit `.env` file
-   - Replace demo values with your credentials:
+
+   - Copy `.env.example` to `.env` (run `cp .env.example .env`)
+   - Replace the demo values in `.env` with your credentials:
    ```env
    VITE_SUPABASE_URL=https://your-project.supabase.co
    VITE_SUPABASE_SUPABASE_ANON_KEY=your-anon-key-here
@@ -151,7 +152,7 @@ GECR-STORE/
 │   └── migrations/         # Database schema
 ├── static/                 # Static assets
 ├── templates/              # Legacy Flask templates
-├── .env                    # Environment configuration
+├── .env.example            # Environment variables template
 ├── package.json
 ├── vite.config.js
 └── README.md
